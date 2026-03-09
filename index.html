@@ -1,210 +1,96 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Заголовок статьи | Название блога</title>
-<meta name="description" content="Краткое описание статьи для поисковых систем">
-<link rel="stylesheet" href="style.css">
-
-<!-- Open Graph теги для шаринга -->
-<meta property="og:title" content="Заголовок статьи">
-<meta property="og:description" content="Описание для соцсетей">
-<meta property="og:image" content="https://site.ru/article-image.jpg">
-<meta property="og:url" content="https://site.ru/article-url">
-<meta property="og:type" content="article">
-
-<!-- Дополнительные метаданные для статьи -->
-<meta name="author" content="Имя автора">
-<meta name="date" content="2023-10-15T08:00:00+03:00">
-<link rel="canonical" href="https://site.ru/canonical-url">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Карточка с эффектом</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header>
-<div class="container">
-<div class="logo">
-<a href="/">
-<img src="blog-logo.svg" alt="Название блога">
-</a>
-</div>
+    <div class="container">
+        <div class="card">
+            <div class="circle" style="--clr: #ff6b6b">
+                <div class="logo">
+                    <img src="logo1.svg" alt="Logo 1">
+                </div>
+            </div>
+            <div class="content">
+                <h2>Карточка 1</h2>
+                <p>Описание для первой карточки с круговым эффектом при наведении</p>
+                <a href="#">Подробнее</a>
+            </div>
+        </div>
 
-<nav class="main-nav">
-<ul>
-<li><a href="category1.html">Категория 1</a></li>
-<li><a href="category2.html">Категория 2</a></li>
-<li><a href="category3.html">Категория 3</a></li>
-<li><a href="about.html">О проекте</a></li>
-<li><a href="contact.html">Контакты</a></li>
-</ul>
-</nav>
+        <div class="card">
+            <div class="circle" style="--clr: #4ecdc4">
+                <div class="logo">
+                    <img src="logo2.svg" alt="Logo 2">
+                </div>
+            </div>
+            <div class="content">
+                <h2>Карточка 2</h2>
+                <p>Описание для второй карточки с круговым эффектом при наведении</p>
+                <a href="#">Подробнее</a>
+            </div>
+        </div>
 
-<div class="header-actions">
-<button class="search-toggle"><i class="search-icon"></i></button>
-<a href="subscribe.html" class="btn">Подписаться</a>
-</div>
-</div>
+        <div class="card">
+            <div class="circle" style="--clr: #ffe66d">
+                <div class="logo">
+                    <img src="logo3.svg" alt="Logo 3">
+                </div>
+            </div>
+            <div class="content">
+                <h2>Карточка 3</h2>
+                <p>Описание для третьей карточки с круговым эффектом при наведении</p>
+                <a href="#">Подробнее</a>
+            </div>
+        </div>
+    </div>
 
-<div class="search-form">
-<div class="container">
-<form action="search.html" method="get">
-<input type="text" name="q" placeholder="Поиск по сайту...">
-<button type="submit">Искать</button>
-</form>
-</div>
-</div>
-</header>
+    <!-- Или если нужны иконки вместо изображений -->
+    <div class="container-icons">
+        <div class="card">
+            <div class="circle" style="--clr: #ff6b6b">
+                <div class="logo">
+                    <span class="icon">⚡</span>
+                </div>
+            </div>
+            <div class="content">
+                <h2>Быстрый старт</h2>
+                <p>Начните работу быстро и эффективно с нашими готовыми решениями</p>
+                <a href="#">Узнать больше</a>
+            </div>
+        </div>
 
-<main>
-<div class="container">
-<!-- Для отдельной статьи -->
-<article class="post">
-<header class="post-header">
-<div class="post-meta">
-<a href="category1.html" class="category">Категория статьи</a>
-<time datetime="2023-10-15">15 октября 2023</time>
-</div>
-<h1>Заголовок статьи</h1>
-<div class="post-subtitle">Подзаголовок или краткое описание статьи</div>
+        <div class="card">
+            <div class="circle" style="--clr: #4ecdc4">
+                <div class="logo">
+                    <span class="icon">🎨</span>
+                </div>
+            </div>
+            <div class="content">
+                <h2>Уникальный дизайн</h2>
+                <p>Современный и привлекательный дизайн для вашего проекта</p>
+                <a href="#">Смотреть работы</a>
+            </div>
+        </div>
 
-<div class="author-info">
-<img src="author-avatar.jpg" alt="Имя автора" class="author-avatar">
-<div class="author-details">
-<a href="author.html" class="author-name">Имя автора</a>
-<p class="author-bio">Краткая информация об авторе</p>
-</div>
-</div>
+        <div class="card">
+            <div class="circle" style="--clr: #ffe66d">
+                <div class="logo">
+                    <span class="icon">🚀</span>
+                </div>
+            </div>
+            <div class="content">
+                <h2>Высокая скорость</h2>
+                <p>Оптимизированная производительность для лучшего опыта</p>
+                <a href="#">Попробовать</a>
+            </div>
+        </div>
+    </div>
 
-<div class="featured-image">
-<img src="article-image.jpg" alt="Описание изображения">
-<figcaption>Подпись к изображению с указанием авторства</figcaption>
-</div>
-</header>
-
-<div class="post-content">
-<div class="table-of-contents">
-<h2>Содержание</h2>
-<ul>
-<li><a href="#section1">Название раздела 1</a></li>
-<li><a href="#section2">Название раздела 2</a></li>
-<li><a href="#section3">Название раздела 3</a></li>
-</ul>
-</div>
-
-<section id="section1">
-<h2>Название раздела 1</h2>
-<p>Текст первого раздела статьи...</p>
-
-<figure class="content-image">
-<img src="section1-image.jpg" alt="Описание изображения">
-<figcaption>Подпись к изображению</figcaption>
-</figure>
-
-<p>Продолжение текста...</p>
-</section>
-
-<section id="section2">
-<h2>Название раздела 2</h2>
-<p>Текст второго раздела...</p>
-
-<blockquote>
-<p>Цитата или выделенный текст, который подчеркивает важность информации.</p>
-<cite>Источник цитаты</cite>
-</blockquote>
-
-<p>Продолжение текста...</p>
-</section>
-
-<section id="section3">
-<h2>Название раздела 3</h2>
-<p>Текст третьего раздела...</p>
-
-<div class="info-box">
-<h3>Важная информация</h3>
-<p>Дополнительные сведения, которые стоит выделить...</p>
-</div>
-
-<h3>Подзаголовок раздела</h3>
-<p>Продолжение текста...</p>
-
-<ul>
-<li>Пункт списка 1</li>
-<li>Пункт списка 2</li>
-<li>Пункт списка 3</li>
-</ul>
-</section>
-</div>
-
-<footer class="post-footer">
-<div class="tags">
-<span>Теги:</span>
-<a href="tag1.html">Тег 1</a>
-<a href="tag2.html">Тег 2</a>
-<a href="tag3.html">Тег 3</a>
-</div>
-
-<div class="share-buttons">
-<span>Поделиться:</span>
-<!-- Кнопки социальных сетей -->
-</div>
-</footer>
-</article>
-
-<section class="author-box">
-<img src="author-avatar-large.jpg" alt="Имя автора" class="author-avatar">
-<div class="author-details">
-<h3>Имя автора</h3>
-<p class="author-bio">Полная биография автора...</p>
-<div class="author-social">
-<!-- Ссылки на социальные сети автора -->
-</div>
-</div>
-</section>
-
-<section class="related-posts">
-<h2>Похожие статьи</h2>
-<div class="posts-grid">
-<!-- Карточки рекомендуемых статей -->
-</div>
-</section>
-
-<section class="comments">
-<h2>Комментарии (12)</h2>
-<!-- Система комментариев -->
-</section>
-</div>
-</main>
-
-<aside class="sidebar">
-<div class="widget popular-posts">
-<h3>Популярные статьи</h3>
-<ul>
-<!-- Список популярных статей -->
-</ul>
-</div>
-
-<div class="widget categories">
-<h3>Категории</h3>
-<ul>
-<!-- Список категорий с количеством статей -->
-</ul>
-</div>
-
-<div class="widget newsletter">
-<h3>Подписка на новости</h3>
-<!-- Форма подписки -->
-</div>
-
-<div class="widget tags-cloud">
-<h3>Облако тегов</h3>
-<!-- Облако тегов -->
-</div>
-</aside>
-
-<footer>
-<!-- Структура футера для блога -->
-</footer>
-
-<script src="script.js"></script>
+    <!-- JavaScript (необязательно, только для дополнительных эффектов) -->
+    <script src="script.js"></script>
 </body>
 </html>
-
