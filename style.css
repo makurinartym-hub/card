@@ -92,10 +92,7 @@ body {
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.box-text:hover {
-    transform: translateX(5px);
-    box-shadow: 0 5px 15px rgba(27, 94, 32, 0.2);
-}
+
 
 /* Стили для ссылки на проект */
 .project-link-container {
@@ -109,11 +106,7 @@ body {
     border: 1px solid #1b5e20;
 }
 
-.project-link-container:hover {
-    background: #d0ebd0;
-    transform: translateX(5px);
-    box-shadow: 0 5px 15px rgba(27, 94, 32, 0.3);
-}
+
 
 .project-icon {
     font-size: 24px;
