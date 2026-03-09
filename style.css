@@ -1,70 +1,22 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: 'Arial', sans-serif;
-    min-height: 100vh;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.container, .container-icons {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 40px;
-    padding: 40px;
-    max-width: 1200px;
+:root {
+    --clr: #ff6b6b; /* Значение по умолчанию */
 }
 
 .card {
     position: relative;
-    width: 350px;
-    height: 400px;
-    background: #fff;
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.25);
-    transition: 0.5s;
+    width: 300px;
+    height: 300px;
+    margin: 50px auto;
 }
 
-.card:hover {
-    transform: translateY(-20px);
-    box-shadow: 0 25px 45px rgba(0,0,0,0.3);
-}
-
-.card .circle {
+.circle {
     position: relative;
     width: 100%;
     height: 100%;
-    background: #000;
-    clip-path: circle(180px at center 0);
-    text-align: center;
-    transition: 0.5s;
+    background: transparent;
 }
 
-.card:hover .circle {
-    clip-path: circle(400px at center 0);
-}
-
-.card .circle::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 0;
-    height: 0;
-    background: var(--clr);
-    transition: width 0.5s, height 0.5s;
-}
-
-/* Ваш код, который вы показали */
+/* Этот блок с картинки */
 .card:hover .circle::before {
     width: 100%;
     transition-delay: 0.5s;
@@ -73,113 +25,43 @@ body {
     background: var(--clr);
 }
 
+.circle::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    transition: width 0.5s, height 0.5s;
+    z-index: 1;
+}
+
+/* Этот блок с картинки */
 .card .circle .logo {
     position: relative;
     width: 250px;
     transition: 0.5s;
     transition-delay: 0.5s;
-    padding-top: 40px;
+    z-index: 2;
 }
 
+/* Этот блок с картинки */
 .card:hover .circle .logo {
     transform: scale(0);
     transition-delay: 0s;
 }
 
-.card .circle .logo img {
-    width: 150px;
-    height: 150px;
-    object-fit: contain;
-}
-
-.card .circle .logo .icon {
-    font-size: 120px;
-    line-height: 1;
-    color: #fff;
-    text-shadow: 0 5px 15px rgba(0,0,0,0.3);
-}
-
-.card .content {
+.logo {
     position: absolute;
-    bottom: 0;
-    width: 100%;
-    padding: 30px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     text-align: center;
-    opacity: 0;
-    transition: 0.5s;
-    transform: translateY(50px);
 }
 
-.card:hover .content {
-    opacity: 1;
-    transform: translateY(0);
-    transition-delay: 0.5s;
-}
-
-.card .content h2 {
-    font-size: 24px;
-    margin-bottom: 10px;
-    color: #333;
-}
-
-.card .content p {
-    color: #666;
-    line-height: 1.5;
-    margin-bottom: 20px;
-}
-
-.card .content a {
-    display: inline-block;
-    padding: 10px 30px;
-    background: var(--clr);
-    color: #fff;
-    text-decoration: none;
-    border-radius: 30px;
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    transition: 0.3s;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-}
-
-.card .content a:hover {
-    transform: scale(1.05);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-}
-
-/* Адаптивность */
-@media (max-width: 768px) {
-    .container, .container-icons {
-        gap: 20px;
-        padding: 20px;
-    }
-    
-    .card {
-        width: 300px;
-        height: 380px;
-    }
-    
-    .card .circle .logo {
-        width: 200px;
-    }
-    
-    .card .circle .logo img {
-        width: 120px;
-        height: 120px;
-    }
-    
-    .card .circle .logo .icon {
-        font-size: 100px;
-    }
-}
-
-@media (max-width: 480px) {
-    .card {
-        width: 280px;
-        height: 360px;
-    }
-    
-    .card .circle .logo {
-        width: 180px;
-    }
+.logo img {
+    width: 100%;
+    height: auto;
+    display: block;
 }
