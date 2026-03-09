@@ -1,67 +1,34 @@
-:root {
-    --clr: #ff6b6b; /* Значение по умолчанию */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.card {
-    position: relative;
+body {
+    background: linear-gradient(115deg, #1b5e20 0%, #ffffff 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    text-align: center;
+    padding: 20px;
+}
+
+
+
+.my-photo {
     width: 300px;
     height: 300px;
-    margin: 50px auto;
-}
-
-.circle {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    background: transparent;
-}
-
-/* Этот блок с картинки */
-.card:hover .circle::before {
-    width: 100%;
-    transition-delay: 0.5s;
-    height: 100%;
-    border-radius: 20px;
-    background: var(--clr);
-}
-
-.circle::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 0;
-    height: 0;
+    object-fit: cover;
     border-radius: 50%;
-    transition: width 0.5s, height 0.5s;
-    z-index: 1;
+    border: 5px solid white;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 
-/* Этот блок с картинки */
-.card .circle .logo {
-    position: relative;
-    width: 250px;
-    transition: 0.5s;
-    transition-delay: 0.5s;
-    z-index: 2;
-}
-
-/* Этот блок с картинки */
-.card:hover .circle .logo {
-    transform: scale(0);
-    transition-delay: 0s;
-}
-
-.logo {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-}
-
-.logo img {
-    width: 100%;
-    height: auto;
-    display: block;
+.my-photo:hover {
+    transform: scale(1.02);
 }
