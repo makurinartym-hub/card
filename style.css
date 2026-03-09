@@ -48,9 +48,9 @@ body {
 
 /* Свободная область (пустое пространство) */
 .empty-space {
-    height: 40px; /* Высота свободной области */
+    height: 40px;
     width: 100%;
-    margin: 20px 0; /* Отступы сверху и снизу */
+    margin: 20px 0;
 }
 
 /* Коробка с заголовком и текстом */
@@ -92,9 +92,44 @@ body {
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.box-text:hover {
-    transform: translateX(5px);
-    box-shadow: 0 5px 15px rgba(27, 94, 32, 0.2);
+/* Стили для контактной информации */
+.contact-info {
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 1px solid #1b5e20;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    padding: 8px 15px;
+    background: #e8f5e8;
+    border-radius: 10px;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+
+
+.contact-icon {
+    font-size: 20px;
+    margin-right: 12px;
+    color: #1b5e20;
+}
+
+.contact-link {
+    color: #1b5e20;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.contact-link:hover {
+    color: #0d3c0d;
+    text-decoration: underline;
 }
 
 /* Анимация */
@@ -117,4 +152,3 @@ body {
 .delay-2 {
     animation-delay: 0.6s;
 }
-
