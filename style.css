@@ -1,3 +1,15 @@
+/* Базовые сбросы и переменные */
+:root {
+    --primary-color: #4a6cf7;
+    --secondary-color: #6c757d;
+    --text-color: #333;
+    --light-bg: #f8f9fa;
+    --border-color: #e9ecef;
+    --font-main: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+    --container-width: 1140px;
+    --spacing: 20px;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -5,79 +17,486 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.card {
-    background: white;
-    border-radius: 15px;
-    padding: 30px;
-    max-width: 400px;
-    width: 90%;
-    text-align: center;
-    box-shadow: 0 10px 40px rgba(0,0,0,0.2);
-}
-
-.photo {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-bottom: 20px;
-    border: 3px solid #764ba2;
-}
-
-h1 {
-    color: #333;
-    margin-bottom: 10px;
-}
-
-.title {
-    color: #764ba2;
-    font-size: 1.1em;
-    margin-bottom: 15px;
-    font-weight: bold;
-}
-
-.description {
-    color: #666;
-    margin-bottom: 25px;
+    font-family: var(--font-main);
+    color: var(--text-color);
     line-height: 1.6;
+    background-color: #fff;
 }
 
-.contacts {
-    text-align: left;
-    background: #f5f5f5;
-    padding: 15px;
-    border-radius: 10px;
-    margin-bottom: 20px;
+.container {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 15px;
 }
 
-.contacts p {
-    margin: 8px 0;
-    color: #555;
+/* Шапка */
+header {
+    background: #fff;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
-.social {
+header .container {
     display: flex;
-    justify-content: center;
-    gap: 15px;
+    align-items: center;
+    justify-content: space-between;
+    height: 80px;
 }
 
-.social a {
+.logo img {
+    height: 40px;
+    width: auto;
+}
+
+/* Навигация */
+.main-nav ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.main-nav a {
     text-decoration: none;
+    color: var(--text-color);
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.main-nav a:hover {
+    color: var(--primary-color);
+}
+
+/* Действия в шапке */
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.search-toggle {
+    background: none;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.search-icon::before {
+    content: "🔍";
+}
+
+.btn {
+    background: var(--primary-color);
     color: white;
-    background: #764ba2;
-    padding: 8px 20px;
+    padding: 10px 20px;
+    text-decoration: none;
     border-radius: 5px;
     transition: background 0.3s;
 }
 
-.social a:hover {
-    background: #667eea;
+.btn:hover {
+    background: #3451b5;
+}
+
+/* Форма поиска */
+.search-form {
+    background: var(--light-bg);
+    padding: 20px 0;
+    display: none;
+}
+
+.search-form.active {
+    display: block;
+}
+
+.search-form form {
+    display: flex;
+    gap: 10px;
+}
+
+.search-form input {
+    flex: 1;
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.search-form button {
+    padding: 12px 25px;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Основной контент */
+main {
+    padding: 50px 0;
+}
+
+main .container {
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    gap: 40px;
+}
+
+/* Статья */
+.post {
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.post-meta {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.category {
+    background: var(--primary-color);
+    color: white;
+    padding: 5px 12px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.time {
+    color: var(--secondary-color);
+    font-size: 14px;
+}
+
+.post h1 {
+    font-size: 42px;
+    line-height: 1.2;
+    margin-bottom: 15px;
+}
+
+.post-subtitle {
+    font-size: 20px;
+    color: var(--secondary-color);
+    margin-bottom: 30px;
+}
+
+/* Информация об авторе */
+.author-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 30px;
+    padding: 20px 0;
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.author-avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.author-details {
+    flex: 1;
+}
+
+.author-name {
+    font-weight: 600;
+    text-decoration: none;
+    color: var(--text-color);
+    font-size: 18px;
+}
+
+.author-bio {
+    color: var(--secondary-color);
+    font-size: 14px;
+}
+
+/* Изображения */
+.featured-image {
+    margin: 30px 0;
+}
+
+.featured-image img {
+    width: 100%;
+    max-height: 500px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+figcaption {
+    text-align: center;
+    color: var(--secondary-color);
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+/* Содержание статьи */
+.table-of-contents {
+    background: var(--light-bg);
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
+
+.table-of-contents h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.table-of-contents ul {
+    list-style: none;
+}
+
+.table-of-contents li {
+    margin-bottom: 8px;
+}
+
+.table-of-contents a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+/* Секции статьи */
+.post-content section {
+    margin-bottom: 50px;
+}
+
+.post-content h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.post-content h3 {
+    font-size: 22px;
+    margin: 25px 0 15px;
+}
+
+.post-content p {
+    margin-bottom: 20px;
+}
+
+.content-image {
+    margin: 30px 0;
+}
+
+.content-image img {
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+/* Цитаты */
+blockquote {
+    margin: 30px 0;
+    padding: 20px 30px;
+    background: var(--light-bg);
+    border-left: 4px solid var(--primary-color);
+    font-style: italic;
+}
+
+blockquote p {
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+blockquote cite {
+    color: var(--secondary-color);
+    font-size: 14px;
+}
+
+/* Информационные блоки */
+.info-box {
+    background: #e3f2fd;
+    padding: 25px;
+    border-radius: 10px;
+    margin: 30px 0;
+}
+
+.info-box h3 {
+    margin-top: 0;
+    color: #0d47a1;
+}
+
+/* Списки */
+.post-content ul, .post-content ol {
+    margin: 20px 0;
+    padding-left: 20px;
+}
+
+.post-content li {
+    margin-bottom: 8px;
+}
+
+/* Подвал статьи */
+.post-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 0;
+    border-top: 1px solid var(--border-color);
+}
+
+.tags {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.tags a {
+    background: var(--light-bg);
+    padding: 5px 12px;
+    border-radius: 20px;
+    text-decoration: none;
+    color: var(--text-color);
+    font-size: 14px;
+}
+
+.share-buttons {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Секция автора */
+.author-box {
+    display: flex;
+    gap: 30px;
+    background: var(--light-bg);
+    padding: 40px;
+    border-radius: 10px;
+    margin: 50px 0;
+}
+
+.author-box .author-avatar {
+    width: 120px;
+    height: 120px;
+}
+
+.author-box h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+/* Похожие статьи */
+.related-posts h2 {
+    font-size: 24px;
+    margin-bottom: 30px;
+}
+
+.posts-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin-bottom: 50px;
+}
+
+/* Комментарии */
+.comments {
+    margin-top: 50px;
+}
+
+.comments h2 {
+    font-size: 24px;
+    margin-bottom: 30px;
+}
+
+/* Сайдбар */
+.sidebar {
+    background: var(--light-bg);
+    padding: 30px;
+    border-radius: 10px;
+}
+
+.widget {
+    margin-bottom: 40px;
+}
+
+.widget h3 {
+    font-size: 20px;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--border-color);
+}
+
+.widget ul {
+    list-style: none;
+}
+
+.widget li {
+    margin-bottom: 10px;
+}
+
+.widget a {
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+.newsletter form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.newsletter input {
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+}
+
+.tags-cloud {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.tags-cloud a {
+    background: white;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 14px;
+}
+
+/* Адаптивность */
+@media (max-width: 992px) {
+    main .container {
+        grid-template-columns: 1fr;
+    }
+    
+    .sidebar {
+        order: 2;
+    }
+}
+
+@media (max-width: 768px) {
+    header .container {
+        flex-direction: column;
+        height: auto;
+        padding: 15px;
+    }
+    
+    .main-nav ul {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+    
+    .author-box {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .posts-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .post h1 {
+        font-size: 32px;
+    }
 }
