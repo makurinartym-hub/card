@@ -61,7 +61,7 @@ body {
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
     border: 2px solid white;
     max-width: 500px;
-    margin: 0 auto;
+    margin: 20px auto;
     animation: slideDown 0.8s ease 0.6s;
     animation-fill-mode: forwards;
     opacity: 0;
@@ -92,14 +92,90 @@ body {
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
+.box-text:hover {
+    transform: translateX(5px);
+    box-shadow: 0 5px 15px rgba(27, 94, 32, 0.2);
+}
+
+/* Стили для ссылки на проект */
+.project-link-container {
+    display: flex;
+    align-items: center;
+    padding: 12px 15px;
+    background: #e8f5e8;
+    border-radius: 10px;
+    margin: 15px 0 10px 0;
+    transition: all 0.3s ease;
+    border: 1px solid #1b5e20;
+}
+
+.project-link-container:hover {
+    background: #d0ebd0;
+    transform: translateX(5px);
+    box-shadow: 0 5px 15px rgba(27, 94, 32, 0.3);
+}
+
+.project-icon {
+    font-size: 24px;
+    margin-right: 12px;
+    color: #1b5e20;
+}
+
+.project-link {
+    color: #1b5e20;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    word-break: break-all;
+    transition: color 0.2s;
+}
+
+.project-link:hover {
+    color: #0d3c0d;
+    text-decoration: underline;
+}
+
+.project-description {
+    margin-top: 10px;
+}
+
+.project-description .box-text {
+    background: #ffffff;
+    border-left: 4px solid #2e7d32;
+    font-style: italic;
+}
+
 /* Стили для контактной информации */
 .contact-info {
-    margin-top: 25px;
-    padding-top: 20px;
-    border-top: 1px solid #1b5e20;
     display: flex;
     flex-direction: column;
     gap: 10px;
+}
+
+.contact-header {
+    margin-bottom: 5px;
+    text-align: left;
+}
+
+.contact-header-title {
+    color: #1b5e20;
+    font-size: 18px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    position: relative;
+    padding-left: 10px;
+}
+
+.contact-header-title::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 3px;
+    height: 18px;
+    background-color: #1b5e20;
+    border-radius: 2px;
 }
 
 .contact-item {
@@ -151,4 +227,12 @@ body {
 
 .delay-2 {
     animation-delay: 0.6s;
+}
+
+.delay-3 {
+    animation-delay: 0.9s;
+}
+
+.delay-4 {
+    animation-delay: 1.2s;
 }
