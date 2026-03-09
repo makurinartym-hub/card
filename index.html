@@ -1,29 +1,210 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Моя визитка</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Заголовок статьи | Название блога</title>
+<meta name="description" content="Краткое описание статьи для поисковых систем">
+<link rel="stylesheet" href="style.css">
+
+<!-- Open Graph теги для шаринга -->
+<meta property="og:title" content="Заголовок статьи">
+<meta property="og:description" content="Описание для соцсетей">
+<meta property="og:image" content="https://site.ru/article-image.jpg">
+<meta property="og:url" content="https://site.ru/article-url">
+<meta property="og:type" content="article">
+
+<!-- Дополнительные метаданные для статьи -->
+<meta name="author" content="Имя автора">
+<meta name="date" content="2023-10-15T08:00:00+03:00">
+<link rel="canonical" href="https://site.ru/canonical-url">
 </head>
 <body>
-    <div class="card">
-        <img src="images/card.jpg" alt="Фото" class="photo">
-        <h1>Иван Петров</h1>
-        <p class="title">Веб-разработчик</p>
-        <p class="description">Создаю современные и отзывчивые сайты</p>
-        
-        <div class="contacts">
-            <p>📧 ivan@email.com</p>
-            <p>📱 +7 (999) 123-45-67</p>
-            <p>🌐 github.com/ivan</p>
-        </div>
-        
-        <div class="social">
-            <a href="#">Telegram</a>
-            <a href="#">GitHub</a>
-            <a href="#">LinkedIn</a>
-        </div>
-    </div>
+<header>
+<div class="container">
+<div class="logo">
+<a href="/">
+<img src="blog-logo.svg" alt="Название блога">
+</a>
+</div>
+
+<nav class="main-nav">
+<ul>
+<li><a href="category1.html">Категория 1</a></li>
+<li><a href="category2.html">Категория 2</a></li>
+<li><a href="category3.html">Категория 3</a></li>
+<li><a href="about.html">О проекте</a></li>
+<li><a href="contact.html">Контакты</a></li>
+</ul>
+</nav>
+
+<div class="header-actions">
+<button class="search-toggle"><i class="search-icon"></i></button>
+<a href="subscribe.html" class="btn">Подписаться</a>
+</div>
+</div>
+
+<div class="search-form">
+<div class="container">
+<form action="search.html" method="get">
+<input type="text" name="q" placeholder="Поиск по сайту...">
+<button type="submit">Искать</button>
+</form>
+</div>
+</div>
+</header>
+
+<main>
+<div class="container">
+<!-- Для отдельной статьи -->
+<article class="post">
+<header class="post-header">
+<div class="post-meta">
+<a href="category1.html" class="category">Категория статьи</a>
+<time datetime="2023-10-15">15 октября 2023</time>
+</div>
+<h1>Заголовок статьи</h1>
+<div class="post-subtitle">Подзаголовок или краткое описание статьи</div>
+
+<div class="author-info">
+<img src="author-avatar.jpg" alt="Имя автора" class="author-avatar">
+<div class="author-details">
+<a href="author.html" class="author-name">Имя автора</a>
+<p class="author-bio">Краткая информация об авторе</p>
+</div>
+</div>
+
+<div class="featured-image">
+<img src="article-image.jpg" alt="Описание изображения">
+<figcaption>Подпись к изображению с указанием авторства</figcaption>
+</div>
+</header>
+
+<div class="post-content">
+<div class="table-of-contents">
+<h2>Содержание</h2>
+<ul>
+<li><a href="#section1">Название раздела 1</a></li>
+<li><a href="#section2">Название раздела 2</a></li>
+<li><a href="#section3">Название раздела 3</a></li>
+</ul>
+</div>
+
+<section id="section1">
+<h2>Название раздела 1</h2>
+<p>Текст первого раздела статьи...</p>
+
+<figure class="content-image">
+<img src="section1-image.jpg" alt="Описание изображения">
+<figcaption>Подпись к изображению</figcaption>
+</figure>
+
+<p>Продолжение текста...</p>
+</section>
+
+<section id="section2">
+<h2>Название раздела 2</h2>
+<p>Текст второго раздела...</p>
+
+<blockquote>
+<p>Цитата или выделенный текст, который подчеркивает важность информации.</p>
+<cite>Источник цитаты</cite>
+</blockquote>
+
+<p>Продолжение текста...</p>
+</section>
+
+<section id="section3">
+<h2>Название раздела 3</h2>
+<p>Текст третьего раздела...</p>
+
+<div class="info-box">
+<h3>Важная информация</h3>
+<p>Дополнительные сведения, которые стоит выделить...</p>
+</div>
+
+<h3>Подзаголовок раздела</h3>
+<p>Продолжение текста...</p>
+
+<ul>
+<li>Пункт списка 1</li>
+<li>Пункт списка 2</li>
+<li>Пункт списка 3</li>
+</ul>
+</section>
+</div>
+
+<footer class="post-footer">
+<div class="tags">
+<span>Теги:</span>
+<a href="tag1.html">Тег 1</a>
+<a href="tag2.html">Тег 2</a>
+<a href="tag3.html">Тег 3</a>
+</div>
+
+<div class="share-buttons">
+<span>Поделиться:</span>
+<!-- Кнопки социальных сетей -->
+</div>
+</footer>
+</article>
+
+<section class="author-box">
+<img src="author-avatar-large.jpg" alt="Имя автора" class="author-avatar">
+<div class="author-details">
+<h3>Имя автора</h3>
+<p class="author-bio">Полная биография автора...</p>
+<div class="author-social">
+<!-- Ссылки на социальные сети автора -->
+</div>
+</div>
+</section>
+
+<section class="related-posts">
+<h2>Похожие статьи</h2>
+<div class="posts-grid">
+<!-- Карточки рекомендуемых статей -->
+</div>
+</section>
+
+<section class="comments">
+<h2>Комментарии (12)</h2>
+<!-- Система комментариев -->
+</section>
+</div>
+</main>
+
+<aside class="sidebar">
+<div class="widget popular-posts">
+<h3>Популярные статьи</h3>
+<ul>
+<!-- Список популярных статей -->
+</ul>
+</div>
+
+<div class="widget categories">
+<h3>Категории</h3>
+<ul>
+<!-- Список категорий с количеством статей -->
+</ul>
+</div>
+
+<div class="widget newsletter">
+<h3>Подписка на новости</h3>
+<!-- Форма подписки -->
+</div>
+
+<div class="widget tags-cloud">
+<h3>Облако тегов</h3>
+<!-- Облако тегов -->
+</div>
+</aside>
+
+<footer>
+<!-- Структура футера для блога -->
+</footer>
+
+<script src="blog.js"></script>
 </body>
 </html>
+
